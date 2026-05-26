@@ -1,0 +1,576 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.77">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="zh-CN"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;湘西物色录 · 色彩转盘&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>user-select: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: system-ui, 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #f2efe7;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #2c2b28;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: background-color 0.4s ease;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1rem 1rem 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1300px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: clamp(1.8rem, 7vw, 2.8rem);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #2c3e2f, #8b5a2b);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-clip: text;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-background-clip: text;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.sub {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #6f5b47;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: clamp(0.8rem, 3vw, 1rem);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.wheel-area {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 1rem 0 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.wheel-wrapper {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: min(85vw, 360px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: min(85vw, 360px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>canvas {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100% !important;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100% !important;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 20px 30px rgba(0,0,0,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #fef7e8;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.spin-btn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #4a3b2c;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px 28px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 60px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 12px rgba(0,0,0,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.spin-btn:active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(0.96);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.select-tip {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.85rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #b87c4f;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #fff3e6;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 6px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.color-title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: clamp(1.4rem, 5vw, 1.8rem);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.color-intro {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #7f6b56;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.gallery {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 1rem 0 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 12px 24px rgba(0,0,0,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-6px);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card-img {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>aspect-ratio: 1 / 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-size: cover;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-position: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card-label {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card-label h3 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card-label p {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #aa9b8c;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal-mask {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(0,0,0,0.8);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(6px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 1000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>visibility: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal-mask.active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>visibility: visible;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #fffef7;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 960px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-height: 90vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 32px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-y: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 30px 40px rgba(0,0,0,0.3);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal-close {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: sticky;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>float: right;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(0,0,0,0.6);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 36px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 36px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 12px 16px 0 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.4rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 10;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1rem 1.8rem 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>clear: both;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal-grid {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 1.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal-preview {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-width: 150px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal-preview img {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 6px 14px rgba(0,0,0,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex: 2;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal-text h2 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.6rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.commercial-title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 1.2rem 0 0.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-top: 1px solid #ddd;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-top: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.mockup-scroll {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-x: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.mockup-item {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex: 0 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 150px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.mockup-item img {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #f9f3ea;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.mockup-item p {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.7rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.support {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-top: 1px solid rgba(0,0,0,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-top: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.donate-btn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #e7b874;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 8px 22px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.qr-hidden {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.show-qr {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.qr-hidden img {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 120px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>footer {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.7rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #b9aa98;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 640px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.modal-content {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding: 0.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.mockup-item {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>width: 120px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1">&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;湘西物色录 · 色彩转盘&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="sub"&gt;转动转盘 · 邂逅七色湘西风物&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="wheel-area"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="wheel-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;canvas id="wheelCanvas" width="600" height="600"&gt;&lt;/canvas&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="spin-btn" id="spinBtn"&gt;✨ 转转盘 ✨&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="select-tip"&gt;👇 也可以直接点击扇形区域选择颜色&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="color-title" id="colorTitle"&gt;赤焰红&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="color-intro" id="colorIntro"&gt;热烈 · 仪式 · 大地的脉搏&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="gallery" id="gallery"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="support"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="donate-btn" id="donateBtn"&gt;🍃 请我喝杯沱江茶 · 支持创作&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="qrCodeBox" class="qr-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="https://picsum.photos/120/120?random=9" alt="赞赏码"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;随喜支持 · 湘西物色&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;点击插画卡片 · 深度文化解读 + 商业落地样机展示&lt;/footer&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="detailModal" class="modal-mask"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="modal-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="modal-close" id="closeModalBtn"&gt;✕&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="modal-content" id="modalContent"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// ==================== 七色数据 ====================</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const colorMap = [</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ key: "red", label: "赤焰红", bgHint: "#fef3f0", intro: "热烈 · 仪式 · 大地的脉搏",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>cards: [</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ title: "红石林", desc: "古丈红石林 · 大地赤色", imgUrl: "https://picsum.photos/id/104/400/400", story: "全球罕见红色碳酸盐岩石林，晴红雨暗。", creative: "厚重笔触，赭红色与光影交织。", mockupImages: ["https://picsum.photos/id/20/300/300","https://picsum.photos/id/30/300/300"] },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ title: "血粑鸭", desc: "凤凰血粑鸭 · 浓郁酱红", imgUrl: "https://picsum.photos/id/127/400/400", story: "鸭血糯米血粑与鸭肉同炖，待客硬菜。", creative: "暗红酱汁高光，青蒜提亮。", mockupImages: ["https://picsum.photos/id/131/300/300"] },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ title: "西兰卡普", desc: "土家织锦 · 朱红经纬", imgUrl: "https://picsum.photos/id/156/400/400", story: "土家族手工织锦，朱红为主图腾。", creative: "几何线条概括经纬，粗粝质感。", mockupImages: ["https://picsum.photos/id/66/300/300"] }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>] },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ key: "orange", label: "暖橙色", bgHint: "#fff6e8", intro: "丰饶 · 烟火 · 暮归暖光",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>cards: [</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ title: "黄昏吊脚楼", desc: "夕阳木楼 · 暖橙光晕", imgUrl: "https://picsum.photos/id/108/400/400", story: "土家转角楼被落日染成橙红色。", creative: "逆光剪影与金色轮廓。", mockupImages: ["https://picsum.photos/id/169/300/300"] },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ title: "油煎糍粑", desc: "焦脆糍粑 · 金黄橙意", imgUrl: "https://picsum.photos/id/173/400/400", story: "糯米油炸外酥里糯。", creative: "热油起泡，橙色高温对比。", mockupImages: ["https://picsum.photos/id/15/300/300"] },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ title: "赤陶器", desc: "湘西赤陶 · 土釉暖橙", imgUrl: "https://picsum.photos/id/92/400/400", story: "本土陶土，哑光橙红。", creative: "指纹肌理，漫反射暖橙。", mockupImages: ["https://picsum.photos/id/96/300/300"] }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>] },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ key: "yellow", label: "明黄色", bgHint: "#fff9e0", intro: "丰收 · 夺目 · 土地的馈赠",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>cards: [</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ title: "油菜花海", desc: "保靖花海 · 明黄春野", imgUrl: "https://picsum.photos/id/96/400/400", story: "春季油菜花连绵，黑瓦木房点缀。", creative: "高饱和明黄＋几何色块。", mockupImages: ["https://picsum.photos/id/10/300/300"] },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ title: "玉米粑", desc: "玉米粑粑 · 谷物暖黄", imgUrl: "https://picsum.photos/id/127/400/400", story: "新鲜玉米磨浆蒸制。", creative: "玉米颗粒感与蒸汽朦胧。", mockupImages: ["https://picsum.photos/id/127/300/300"] },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ title: "稻谷堆", desc: "秋收晒谷 · 金黄丰年", imgUrl: "https://picsum.photos/id/163/400/400", story: "晒谷场圆锥谷堆。", creative: "点状笔触，逆光金色边缘。", mockupImages: ["https://picsum.photos/id/30/300/300"] }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>] },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ key: "green", label: "翡翠绿", bgHint: "#edf5ee", intro: "生机 · 秘境 · 峡谷的呼吸",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>cards: [</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ title: "金鞭溪", desc: "张家界碧潭 · 翡翠绿", imgUrl: "https://picsum.photos/id/29/400/400", story: "溪水碧绿倒映翠峰。", creative: "水纹光斑，青苔石湿润感。", mockupImages: ["https://picsum.photos/id/22/300/300"] },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ title: "蒿子粑粑", desc: "艾草蒿粑 · 天然翠绿", imgUrl: "https://picsum.photos/id/120/400/400", story: "野生蒿草与糯米。", creative: "墨绿到浅绿渐变。", mockupImages: ["https://picsum.photos/id/128/300/300"] },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ title: "竹编", desc: "湘西竹编 · 竹青绿韵", imgUrl: "https://picsum.photos/id/95/400/400", story: "竹篾经纬，天然青绿。", creative: "经纬光影，清透翠色。", mockupImages: ["https://picsum.photos/id/154/300/300"] }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>] },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ key: "blue", label: "靛蓝色", bgHint: "#eef3fc", intro: "静谧 · 匠心 · 蓝染传承",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>cards: [</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ title: "沅水晨雾", desc: "蓝雾弥漫 · 水墨意境", imgUrl: "https://picsum.photos/id/21/400/400", story: "晨雾蓝紫，远山如黛。", creative: "湿画法渐变蓝雾。", mockupImages: ["https://picsum.photos/id/21/300/300"] },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ title: "蓝莓酱", desc: "湘西野莓 · 深蓝紫调", imgUrl: "https://picsum.photos/id/169/400/400", story: "野生蓝莓熬酱，天然深蓝。", creative: "果酱流动光泽。", mockupImages: ["https://picsum.photos/id/133/300/300"] },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ title: "凤凰蜡染", desc: "靛蓝冰纹 · 蓝白艺术", imgUrl: "https://picsum.photos/id/63/400/400", story: "蓝靛染布冰裂纹。", creative: "放大冰纹细节，蓝白对比。", mockupImages: ["https://picsum.photos/id/88/300/300"] }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>] },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ key: "purple", label: "藤紫色", bgHint: "#f9f0fb", intro: "灵秀 · 幽谷 · 漫紫花瀑",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>cards: [</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ title: "梳头溪紫藤", desc: "古丈紫藤 · 垂落如霞", imgUrl: "https://picsum.photos/id/20/400/400", story: "百年紫藤繁花如瀑。", creative: "粉紫渐变，花串垂坠动态。", mockupImages: ["https://picsum.photos/id/96/300/300"] },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ title: "紫薯糍粑", desc: "紫薯粉糯 · 天然芋紫", imgUrl: "https://picsum.photos/id/177/400/400", story: "紫薯与糍粑结合软糯甘甜。", creative: "柔和芋紫，拉丝效果。", mockupImages: ["https://picsum.photos/id/127/300/300"] },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ title: "苗绣紫", desc: "苗族刺绣 · 神秘紫丝", imgUrl: "https://picsum.photos/id/155/400/400", story: "罕见紫色丝线绣图腾。", creative: "深紫底布＋亮紫丝线。", mockupImages: ["https://picsum.photos/id/158/300/300"] }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>] },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ key: "white", label: "云白色", bgHint: "#fafbfc", intro: "纯净 · 仙踪 · 云端之上",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>cards: [</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ title: "矮寨大桥云海", desc: "云中飞桥 · 钢白与云白", imgUrl: "https://picsum.photos/id/90/400/400", story: "大桥穿云海，白色钢索。", creative: "留白＋浅灰块面。", mockupImages: ["https://picsum.photos/id/11/300/300"] },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ title: "米豆腐", desc: "玉白米豆腐 · 温润甘醇", imgUrl: "https://picsum.photos/id/154/400/400", story: "大米磨浆白嫩爽滑。", creative: "高光表现弹性质感。", mockupImages: ["https://picsum.photos/id/30/300/300"] },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ title: "苗族银饰", desc: "银光雪白 · 錾刻技艺", imgUrl: "https://picsum.photos/id/36/400/400", story: "苗银捶打錾刻，亮白闪耀。", creative: "银白高光与暗部对比。", mockupImages: ["https://picsum.photos/id/33/300/300"] }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>] }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// 转盘配置</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let currentAngle = 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let spinning = false;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let animFrame = null;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let spinVelocity = 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let spinDecay = 0.98;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const canvas = document.getElementById("wheelCanvas");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const ctx = canvas.getContext("2d");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let width, height, centerX, centerY, radius;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const segmentLabels = colorMap.map(c =&gt; c.label);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const segmentColors = ["#e44a2e", "#f39c12", "#f1c40f", "#2e8b57", "#2980b9", "#8e44ad", "#ecf0f1"];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function switchToColor(colorKey) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const selected = colorMap.find(c =&gt; c.key === colorKey);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!selected) return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.body.style.backgroundColor = selected.bgHint || "#f2efe7";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById("colorTitle").innerText = selected.label;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById("colorIntro").innerText = selected.intro;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>renderGallery(selected);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function getSelectedColorKey() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let angle = (Math.PI * 2 - currentAngle) % (Math.PI * 2);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let step = (Math.PI * 2) / segmentLabels.length;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let index = Math.floor(angle / step) % segmentLabels.length;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return colorMap[index].key;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function onSpinEnd() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>spinning = false;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (animFrame) cancelAnimationFrame(animFrame);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const selectedKey = getSelectedColorKey();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>switchToColor(selectedKey);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function animateSpin() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!spinning) return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>spinVelocity *= spinDecay;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>currentAngle += spinVelocity;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>drawWheel();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (Math.abs(spinVelocity) &lt; 0.005) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>onSpinEnd();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>animFrame = requestAnimationFrame(animateSpin);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function startSpin() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (spinning) return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>spinVelocity = Math.random() * 0.5 + 0.3;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>spinning = true;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>animateSpin();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function drawWheel() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!ctx) return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ctx.clearRect(0, 0, width, height);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const angleStep = (Math.PI * 2) / segmentLabels.length;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>for (let i = 0; i &lt; segmentLabels.length; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const start = i * angleStep + currentAngle;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const end = start + angleStep;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.moveTo(centerX, centerY);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.arc(centerX, centerY, radius, start, end);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillStyle = segmentColors[i % segmentColors.length];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fill();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeStyle = "white";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineWidth = 2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.stroke();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillStyle = "#2c3e2f";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.font = `bold ${Math.floor(radius * 0.08)}px "Segoe UI"`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const mid = start + angleStep / 2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const textRadius = radius * 0.7;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const x = centerX + Math.cos(mid) * textRadius;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const y = centerY + Math.sin(mid) * textRadius + 8;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let shortText = segmentLabels[i].length &gt; 4 ? segmentLabels[i].slice(0, 4) : segmentLabels[i];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillStyle = "#2d2b26";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillText(shortText, x - 12, y);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ctx.moveTo(centerX - 12, 10);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ctx.lineTo(centerX, 0);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ctx.lineTo(centerX + 12, 10);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ctx.fillStyle = "#e67e22";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ctx.fill();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ctx.arc(centerX, centerY, radius * 0.06, 0, 2 * Math.PI);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ctx.fillStyle = "#f5bc70";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ctx.fill();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function handleCanvasClick(e) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (spinning) return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const rect = canvas.getBoundingClientRect();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const scaleX = canvas.width / rect.width;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const scaleY = canvas.height / rect.height;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const mouseX = (e.clientX - rect.left) * scaleX;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const mouseY = (e.clientY - rect.top) * scaleY;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const dx = mouseX - centerX;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const dy = mouseY - centerY;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const distance = Math.hypot(dx, dy);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (distance &gt; radius) return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let clickAngle = Math.atan2(dy, dx);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (clickAngle &lt; 0) clickAngle += Math.PI * 2;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let trueAngle = (clickAngle - currentAngle + Math.PI * 2) % (Math.PI * 2);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const step = (Math.PI * 2) / segmentLabels.length;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let idx = Math.floor(trueAngle / step) % segmentLabels.length;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const selectedColor = colorMap[idx];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>switchToColor(selectedColor.key);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>drawWheel();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function resizeCanvas() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const container = canvas.parentElement;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const size = container.clientWidth;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>canvas.width = size;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>canvas.height = size;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>width = size;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>height = size;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>centerX = width / 2;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>centerY = height / 2;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>radius = width / 2 - 8;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>drawWheel();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function renderGallery(colorGroup) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const galleryDiv = document.getElementById("gallery");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>galleryDiv.innerHTML = "";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>colorGroup.cards.forEach(card =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const cardDiv = document.createElement("div");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cardDiv.className = "card";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cardDiv.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card-img" style="background-image: url('${card.imgUrl}');"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card-label"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;${card.title}&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;${card.desc}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cardDiv.addEventListener("click", () =&gt; openModal(card, colorGroup));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>galleryDiv.appendChild(cardDiv);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function openModal(card, group) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const modal = document.getElementById("detailModal");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const modalContent = document.getElementById("modalContent");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const mockups = card.mockupImages || ["https://picsum.photos/300/300?rand=1", "https://picsum.photos/300/300?rand=2"];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let mockHtml = `&lt;div class="commercial-title"&gt;📦 商业落地 · 样机概念&lt;/div&gt;&lt;div class="mockup-scroll"&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>mockups.forEach((url, i) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>mockHtml += `&lt;div class="mockup-item"&gt;&lt;img src="${url}" alt="样机${i + 1}"&gt;&lt;p&gt;衍生品方案 ${i + 1}&lt;/p&gt;&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>mockHtml += `&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>modalContent.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="modal-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="modal-preview"&gt;&lt;img src="${card.imgUrl}" alt=""&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="modal-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2&gt;${card.title}&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p style="color:#b87333;"&gt;${group.label} · ${card.desc}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;strong&gt;📖 文化解读&lt;/strong&gt;&lt;br&gt;${card.story || "湘西风物的色彩故事。"}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;strong&gt;🎨 创作理念&lt;/strong&gt;&lt;br&gt;${card.creative || "插画色彩与构图语言。"}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>${mockHtml}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="background:#F8F3EA; padding:10px; border-radius:20px; margin-top:16px; font-size:0.8rem;"&gt;🎯 该色彩系列可授权文旅包装、数字周边、城市宣传。&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>modal.classList.add("active");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function closeModal() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById("detailModal").classList.remove("active");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function initDonate() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const btn = document.getElementById("donateBtn");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const qr = document.getElementById("qrCodeBox");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>btn.onclick = () =&gt; qr.classList.toggle("show-qr");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function init() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>resizeCanvas();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.addEventListener("resize", resizeCanvas);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>canvas.addEventListener("click", handleCanvasClick);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById("spinBtn").addEventListener("click", startSpin);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById("closeModalBtn").addEventListener("click", closeModal);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById("detailModal").addEventListener("click", (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (e.target === document.getElementById("detailModal")) closeModal();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>initDonate();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const defaultColor = colorMap[0];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>switchToColor(defaultColor.key);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>init();</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
